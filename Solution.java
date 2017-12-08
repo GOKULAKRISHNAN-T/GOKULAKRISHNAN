@@ -1,26 +1,21 @@
-package org.em;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+package org.excep.main;
 
 public class Solution {
-
-	public static void main(String[] args) {
-		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-		SessionFactory sf = new Configuration().configure().buildSessionFactory();
-		Session session = sf.openSession();
-		Empl empl = new Empl();
-		Address homeAddress = new Address();
-		Address companyAddress = new Address();
-		empl.setEmp_id(1);
-		empl.setSalary(5000);
-		
-		session.close();
-		sf.close();
+	private static int divide(int n1, int n2) {
+		if (n2==0){
+			throw new NumberFormatException("n2 =0");
+		}
+		else{
+			System.out.println("value is"+n1/n2);
+		}
+		return 0;
 	}
+	public static void main(String[] args){
+	 int n1=5;
+	 int n2 =0;
+	 int n3 = divide(n1,n2);
+	
+}
 
+	
 }
